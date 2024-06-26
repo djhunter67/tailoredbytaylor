@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+actix-files = "0.6.6"
+actix-web = "4.8.0"
+askama = "0.12.1"
+log = "0.4.21"
+mongodb = "3.0.0"
+simplelog = "0.12.2"

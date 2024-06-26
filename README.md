@@ -5,7 +5,7 @@ A portfolio website for Taylor Denby in pursuit of her Voice Over career.  She r
 
 ## Taylor Denby
 
-![Taylor Denby](./assets/imgs/half_hero_taylor.webp)
+![Taylor Denby](./static/assets/imgs/half_hero_taylor.webp)
 
 ## Equipment
 - Sound treated home studio

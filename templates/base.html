@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ title }} - My Site{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="/static/imgs/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script defer src="/static/htmx/htmx.min.js"></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <header id="template_header">
+      <h1>My Site</h1>
+      <nav class="template_header_head">
+	<ul class="template_header_head_left">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="/">Voice Over</a></li>
+	  <li><a href="/">Content Creation</a></li>
+	  <li><a href="/">Illustraton</a></li>
+	</ul>
+
+	<ul class="template_header_head_right">
+	  <li><a href="/">Contact</a></li>
+	  <li><a href="https://www.tiktok.com/@taylor_denby6?_t=8gZk7Ntg4bO&_r=1" target="_blank" rel="noopener noreferrer"><img src="/static/imgs/tik_tok_mini.webp" alt="Tik Tok icon"></a></li>
+	  <li><a href="https://www.instagram.com/tailoredbytaylorvo" target="_blank" rel="noopener noreferrer"><img src="/static/imgs/instagram_mini.webp" alt="Instagram icon"></a></li>
+	  <li><a href="https://www.facebook.com/people/Tailoredby-Taylorvo/61553207246621/?mibextid=LQQJ4d"><img src="/static/imgs/facebook_mini.webp" alt="Facebodok icon"></a></li>
+	  <li><a href="https://www.youtube.com/@TailoredbyTaylorVoiceOverServi" target="_blank" rel="noopener noreferrer"><img src="/static/imgs/YouTube_mini.webp" alt="YouTube icon"></a></li>
+	</ul>
+      </nav>
+    </header>
+    <div id="template_pages">
+      {% block individual_page_contents %}
+      
+      {% endblock %}
+    </div>
+    <footer class="template_footer">
+      <section class="template_footer_top">
+	<h3>Tailored by Taylor Voice Over Services</h3>
+      </section>
+      <section class="template_footer_mid">
+	<div class="template_footer_mid_left">
+	  <ul>
+	    <li><a href="https://www.tiktok.com/@taylor_denby6?_t=8gZk7Ntg4bO&_r=1" target="_blank" rel="noopener noreferrer"><img src="/static/imgs/tik_tok_mini.webp" alt="Tik Tok icon"></a></li>
+	    <li><a href="https://www.instagram.com/tailoredbytaylorvo" target="_blank" rel="noopener noreferrer"><img src="/static/imgs/instagram_mini.webp" alt="Instagram icon"></a></li>
+	    <li><a href="https://www.facebook.com/people/Tailoredby-Taylorvo/61553207246621/?mibextid=LQQJ4d"><img src="/static/imgs/facebook_mini.webp" alt="Instagram icon"></a></li>
+	    <li><a href="https://www.youtube.com/@TailoredbyTaylorVoiceOverServi" target="_blank" rel="noopener noreferrer"><img src="/static/imgs/YouTube_mini.webp" alt="YouTube icon"></a></li>
+	  </ul>
+	</div>
+	<div class="template_footer_mid_center">
+	  <aside class="template_footer_email">tailoredbytaylorvo@gmail.com</aside>
+	</div>
+	<div class="template_footer_mid_right">
+	  <p id="location">Atlant, GA</p>
+	</div>
+	<section class="template_footer_bottom">
+	  <p>©2023 by Tailored by Taylor Voice Over Services.</p>
+	</section>
+      </section>
+      <div class="template_footer_contact_us">
+	<button id="minimized_chat"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style="border-radius: 0px; fill: rgb(255, 255, 246); width: 26px; height: 26px; flex-shrink: 0;"><path d="M16 2C8.28 2 2 7.8 2 14.93a12.144 12.144 0 001.696 6.15l-1.668 7.51A1.16 1.16 0 003.63 29.9l6.914-3.072A14.835 14.835 0 0016 27.861c7.72 0 14-5.8 14-12.93S23.72 2 16 2zm4.508 16.32h-9.016a1.16 1.16 0 010-2.32h9.016a1.16 1.16 0 010 2.32zm0-4.638h-9.016a1.16 1.16 0 010-2.318h9.016a1.16 1.16 0 110 2.318z" fill="currentColor" fill-rule="nonzero"></path></svg>
+	  <h2 class="template_footer_contact_us_text">Contact Us</h2>
+	</button>
+      </div>
+    </footer>
+  </body>
+</html>
