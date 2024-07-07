@@ -3,7 +3,9 @@ use askama::Template;
 use log::{error, info, warn};
 use mongodb::{bson::doc, Client};
 
-use crate::template::renderers::{IndexTemplate, NotFoundTemplate};
+use crate::template::renderers::{
+    Contact, ContentCreation, Illustration, IndexTemplate, NotFoundTemplate, VoiceOver
+};
 
 #[get("/")]
 pub async fn index(mongo_client: web::Data<Client>) -> impl Responder {
@@ -46,6 +48,70 @@ pub async fn not_found() -> impl Responder {
     info!("404 Not Found template rendered");
 
     HttpResponse::NotFound()
+        .content_type("text/html; charset=utf-8")
+        .body(response_body)
+}
+
+#[get("/contact")]
+pub async fn contact() -> impl Responder {
+    let template = Contact {
+        title: "Contact Page Content!",
+        body: "Contact Page body Content!",
+    };
+
+    let response_body = template.render().unwrap();
+
+    info!("Contact template rendered");
+
+    HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(response_body)
+}
+
+#[get("/voice_over")]
+pub async fn voice_over() -> impl Responder {
+    let template = VoiceOver {
+        title: "Voice Over Page Content!",
+        body: "Voice Over Page body Content!",
+    };
+
+    let response_body = template.render().unwrap();
+
+    info!("Voice Over template rendered");
+
+    HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(response_body)
+}
+
+#[get("/illustration")]
+pub async fn illustration() -> impl Responder {
+    let template = Illustration {
+        title: "Illustration Page Content!",
+        body: "Illustration Page body Content!",
+    };
+
+    let response_body = template.render().unwrap();
+
+    info!("Illustration template rendered");
+
+    HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(response_body)
+}
+
+#[get("/content_creation")]
+pub async fn content_creation() -> impl Responder {
+    let template = ContentCreation {
+        title: "Content Creation Page Content!",
+        body: "Content Creation Page body Content!",
+    };
+
+    let response_body = template.render().unwrap();
+
+    info!("Content Creation template rendered");
+
+    HttpResponse::Ok()
         .content_type("text/html; charset=utf-8")
         .body(response_body)
 }

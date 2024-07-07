@@ -83,6 +83,10 @@ async fn main() -> io::Result<()> {
                     .use_last_modified(true),
             )
             .service(routes::index)
+            .service(routes::voice_over)
+            .service(routes::contact)
+            .service(routes::content_creation)
+            .service(routes::illustration)
             .default_service(
                 // Takes every not found to the 404 page and 404 response code
                 web::route()

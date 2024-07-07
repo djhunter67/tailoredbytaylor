@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block head %}
+{% endblock %}
+{% block individual_page_contents %}
+<div class="content_creation">
+  <h1> {{ title }} </h1>
+  <p> {{ body }} </p>
+</div>
+{% call super() %} {% endblock %}
+
