@@ -3,7 +3,9 @@
 {% block head %}
 {% endblock %}
 {% block individual_page_contents %}
-<h1> {{ title }} </h1>
-<p> {{ body }} </p>
+<div class="home">
+  <h1> {{ title }} </h1>
+  <p> {{ body }} </p>
+</div>
 {% call super() %} {% endblock %}
 

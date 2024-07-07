@@ -21,8 +21,8 @@ pub async fn index(mongo_client: web::Data<Client>) -> impl Responder {
     });
 
     let template = IndexTemplate {
-        title: "Tailored by Taylor!",
-        body: "Welcome to the Rust web server!",
+        title: "Home Page Content!",
+        body: "Home Page body Content!",
     };
 
     let response_body = template.render().unwrap();
