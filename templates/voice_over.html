@@ -4,8 +4,29 @@
 {% endblock %}
 {% block individual_page_contents %}
 <div class="voice_over">
-  <h1> {{ title }} </h1>
-  <p> {{ body }} </p>
+  <section class="voice_over__title">
+    <h1> {{ title }} </h1>
+  </section>
+  <section class="voice_over__body">
+    <header class="voice_over__body__header">
+      <h2>Demos</h2>
+      <p>TailoredbyTaylorVO</p>
+    </header>
+    {% for demo in demos %}
+    <aside class="voice_over__body__play">
+      <a
+	class="voice_over__body__play__circle"
+	target="_self"
+	hx-post="/play_demo"
+	hx-swap="none"
+	hx-include="[id='demo_selected']">
+	 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><defs><style> .cls-1 { fill-rule: evenodd; } </style></defs><path class="" d="M-0.009,7.994V1.106A0.843,0.843,0,0,1,1.285.347L6.3,3.734l5.186,3.5a0.931,0.931,0,0,1,0,1.518L6.3,12.255,1.285,15.642a0.843,0.843,0,0,1-1.294-.759V7.994Z"></path></svg>
+      </a>
+      <p id="demo_selected"> {{ demo }} </p>
+      TailoredByTaylorVO
+    </aside>    
+    {% endfor %}
+  </section>  
 </div>
 {% call super() %} {% endblock %}
 

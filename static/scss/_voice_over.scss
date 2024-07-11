@@ -1,0 +1,61 @@
+$header-color: hsl(158, 4%, 84%);
+$body-color: hsl(320, 14%, 17%);
+$header-height: 9rem;
+$play-button-size: 3rem;
+
+.voice_over {
+    &__title {
+	background-color: $header-color;
+	text-align: center;
+	font-size: xx-large;
+	height: $header-height;
+	font-family: Arial, Helvetica, sans-serif;
+
+	h1 {
+	    padding: calc($header-height / 3) 0;
+	    margin: 0;
+	}
+    }
+
+    &__body {
+	background-color: $body-color;
+	color: white;
+	height: fit-content;
+
+	&__header {
+	    font-size: x-large;
+	    padding: 1rem;
+
+	    h2 {
+		margin-bottom: 0;
+		font-family: 'Times New Roman', Times, serif;
+		font-weight: 300;
+	    }
+	    p {
+	    	margin-top: 0;
+		font-size: medium;
+		font-family: 'Times New Roman', Times, serif
+	    }
+	}
+
+	&__play {
+	    display: flex;
+	    flex-direction: row;
+	    gap: 2rem;
+	    margin-bottom: 2rem;
+	    margin-left: 2rem;
+
+	    &__circle {
+		width: $play-button-size;
+		height: $play-button-size;
+		border-radius: 50%;
+		border: 1px solid white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	    }	    
+	}
+    }
+}
+

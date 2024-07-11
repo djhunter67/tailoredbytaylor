@@ -1,3 +1,5 @@
+@import "voice_over";
+
 $header-footer: hsl(60, 4%, 100%);
 $hero: hsl(158, 4%, 84%);
 $nav-bar: hsl(316, 9%, 67%);
@@ -13,7 +15,6 @@ body {
     }
     
 }
-
 
 .template_header {
     background-color: $header-footer;
@@ -89,7 +90,6 @@ body {
 
 .template_pages{
     background-color: $hero;
-    border: 1px solid black;
 }
 
 .template_footer {
@@ -99,6 +99,7 @@ body {
     position: absolute;
     bottom: 5rem;
     width: 100%;
+    background-color: $header-footer;
 
     #black_bar {
 	height: 2.8rem;
@@ -116,7 +117,6 @@ body {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	width: 45%;
 	margin: 0 auto;
 
 	&__top {
@@ -126,12 +126,13 @@ body {
 	}
 
 	&__mid {
-	    display: flex;
-	    justify-content: space-between;
-	    flex-direction: row;
+	    display: grid;
+	    grid-template-columns: repeat(3, 1fr);
+	    grid-template-rows: 1fr;
 	    align-items: center;
-	    gap: 8rem;
-
+	    justify-content: center;
+	    gap: 7rem;
+	    
 	    &__left {
 		ul {
 		    display: flex;

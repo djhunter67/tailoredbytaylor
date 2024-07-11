@@ -4,7 +4,7 @@ use log::{error, info, warn};
 use mongodb::{bson::doc, Client};
 
 use crate::template::renderers::{
-    Contact, ContentCreation, Illustration, IndexTemplate, NotFoundTemplate, VoiceOver
+    Contact, ContentCreation, Illustration, IndexTemplate, NotFoundTemplate, VoiceOver,
 };
 
 #[get("/")]
@@ -71,8 +71,16 @@ pub async fn contact() -> impl Responder {
 #[get("/voice_over")]
 pub async fn voice_over() -> impl Responder {
     let template = VoiceOver {
-        title: "Voice Over Page Content!",
-        body: "Voice Over Page body Content!",
+        title: "Voice Over Services",
+        demos: vec![
+            "Booking.com - Comm. Demo",
+            "Florine... - Commercial",
+            "OFF! - Comm. Demo",
+            "Audible - Comm. Demo",
+            "Royal - Comm. Demo",
+            "BetterHelp - Comm. Demo",
+            "Expedia - Comm. Demo",
+        ],
     };
 
     let response_body = template.render().unwrap();

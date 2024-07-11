@@ -14,6 +14,8 @@ use actix_web::{guard, http::KeepAlive, middleware, web, App, HttpServer};
 use log::{debug, error, info};
 use mongodb::Client;
 
+use crate::endpoints::demonstrations;
+
 /// The local IP address of the server.
 const HOST_IP: &str = "0.0.0.0"; // Local connection
 /// The port that the server will listen on.
@@ -87,6 +89,7 @@ async fn main() -> io::Result<()> {
             .service(routes::contact)
             .service(routes::content_creation)
             .service(routes::illustration)
+            .service(demonstrations::play_demo)
             .default_service(
                 // Takes every not found to the 404 page and 404 response code
                 web::route()
