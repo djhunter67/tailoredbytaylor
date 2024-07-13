@@ -21,6 +21,7 @@ $play-button-size: 3rem;
 	background-color: $body-color;
 	color: white;
 	height: fit-content;
+	
 
 	&__header {
 	    font-size: x-large;
@@ -38,23 +39,52 @@ $play-button-size: 3rem;
 	    }
 	}
 
-	&__play {
-	    display: flex;
-	    flex-direction: row;
-	    gap: 2rem;
-	    margin-bottom: 2rem;
-	    margin-left: 2rem;
+	&__container {
+	    overflow-y: scroll;
+	    height: 39vh;
 
-	    &__circle {
-		width: $play-button-size;
-		height: $play-button-size;
-		border-radius: 50%;
-		border: 1px solid white;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-	    }	    
+	    &__play {
+		display: grid;
+		grid-template-areas:
+		    "play play1 play2 play3";
+
+		grid-template-rows: 1fr;
+		grid-template-columns: 6rem 1fr 1fr 9rem;
+		
+		&__circle {
+		    grid-area: play;
+		    margin-left: 1rem;
+		    align-self: center;
+		    width: $play-button-size;
+		    height: $play-button-size;
+		    border-radius: 50%;
+		    border: 1px solid white;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    cursor: pointer;
+		}
+
+		#demo_selected {
+		    grid-area: play1;
+		    justify-self: start;
+		    
+		}
+
+		#catch_phrase {
+		    grid-area: play1;
+		    margin-top: 2.5rem;
+		    justify-self: start;
+		}
+
+		#demo_time {
+		    grid-area: play3;
+		    justify-self: center;
+		    align-self: center;
+		    
+		}
+
+	    }
 	}
     }
 }

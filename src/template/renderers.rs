@@ -40,5 +40,5 @@ pub struct Illustration<'a> {
 #[template(path = "voice_over.html")]
 pub struct VoiceOver<'a> {
     pub title: &'a str,
-    pub demos: Vec<&'a str>,
+    pub demos: Vec<(&'a str, &'a str)>,
 }
