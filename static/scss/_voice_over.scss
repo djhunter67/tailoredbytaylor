@@ -46,10 +46,10 @@ $play-button-size: 3rem;
 	    &__play {
 		display: grid;
 		grid-template-areas:
-		    "play play1 play2 play3";
+		    "play play1 play2";
 
 		grid-template-rows: 1fr;
-		grid-template-columns: 6rem 1fr 1fr 9rem;
+		grid-template-columns: 6rem 1fr  9rem;
 		
 		&__circle {
 		    grid-area: play;
@@ -68,7 +68,6 @@ $play-button-size: 3rem;
 		#demo_selected {
 		    grid-area: play1;
 		    justify-self: start;
-		    
 		}
 
 		#catch_phrase {
@@ -77,15 +76,57 @@ $play-button-size: 3rem;
 		    justify-self: start;
 		}
 
-		#demo_time {
-		    grid-area: play3;
+		#demo_time_wrap {
+		    grid-area: play2;
 		    justify-self: center;
 		    align-self: center;
-		    
+		    color: white;
+		    cursor: none;
+		    opacity: 1;
 		}
+		&__morphed {
+		    // display: none;
+		    opacity: 0;
+		    grid-area: play2;
+		    margin-left: 1rem;
+		    cursor: pointer;
+		    justify-self: center;
+		    align-self: center;
 
+		    &:has(button:hover) {
+			color: coral;
+			// margin-left: 150rem;
+			opacity: 0;
+		    }
+
+		    &:hover {
+			#demo_time_wrap {
+			    color: coral;
+			    // margin-left: 150rem;
+			    opacity: 0;
+			}
+			opacity: 1;
+			transition: opacity 1.65s;
+		    }
+		}
 	    }
 	}
     }
 }
 
+
+@keyframes time_morph {
+    0% {
+	transform: scale(1);
+    }
+    50% {
+	transform: scale(2.1);
+
+    }
+    100% {
+	transform: scale(2);
+	color: green;
+	opacity: 0;
+	display: none;
+    }
+}

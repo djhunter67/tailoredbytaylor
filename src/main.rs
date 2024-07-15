@@ -90,6 +90,7 @@ async fn main() -> io::Result<()> {
             .service(routes::content_creation)
             .service(routes::illustration)
             .service(demonstrations::play_demo)
+            .service(demonstrations::demo_time_shift)
             .default_service(
                 // Takes every not found to the 404 page and 404 response code
                 web::route()

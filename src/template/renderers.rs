@@ -42,3 +42,9 @@ pub struct VoiceOver<'a> {
     pub title: &'a str,
     pub demos: Vec<(&'a str, &'a str)>,
 }
+
+#[derive(Template)]
+#[template(path = "parts/demo_time_shift.part.html")]
+pub struct DemoTimeShift<'a> {
+    pub demo: (&'a str, &'a str),
+}
