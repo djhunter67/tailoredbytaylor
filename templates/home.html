@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block head %}
+{% endblock %}
+{% block individual_page_contents %}
+<div id="home">
+  <section id="home__header">
+    <h2>WELCOME!!</h2>
+    <p id="home__header__description">Browse my site and examples of my work to determine which service is best for you. And feel free to email me directly or click the calendly link to schedule a consult before purchasing a service!</p>
+    <buttton
+      id="home_header__description__button"
+      hx-get="/booking"
+      hx-swap="none"
+      >
+      <h4>	
+	Book a Consultant
+      </h4>
+    </buttton>
+  </section>  
+</div>
+{% call super() %} {% endblock %}

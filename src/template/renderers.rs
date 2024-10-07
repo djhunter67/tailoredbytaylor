@@ -1,8 +1,8 @@
 use askama::Template;
 
 #[derive(Template)]
-#[template(path = "index.html")]
-pub struct IndexTemplate<'a> {
+#[template(path = "home.html")]
+pub struct HomePage<'a> {
     // TODO: Add relevant fields here
     pub title: &'a str,
     pub body: &'a str,

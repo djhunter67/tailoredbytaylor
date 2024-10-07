@@ -1,0 +1,22 @@
+#home {
+    background-color: $header-color;
+
+    &__header {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	
+	h2 {
+	    font-size: 3rem;
+	}
+	&__description {
+	    font-family: 'Times New Roman', Times, serif;
+	    font-weight: lighter;
+	}
+	&__button {
+	    text-align: center;
+	}
+    }
+}

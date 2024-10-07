@@ -22,7 +22,6 @@ const HOST_IP: &str = "0.0.0.0"; // Local connection
 const PORT: u16 = 8000;
 // const API_RS: &str = "127.0.0.1:8090"; // Communication with the signal generator
 /// The name of the database that will be used.
-
 pub const MONGO_PATH: &str = "mongodb://10.20.30.20:27017/"; // Local connection
 
 const DB_NAME: &str = "tbytvo"; // Local connection
@@ -84,7 +83,7 @@ async fn main() -> io::Result<()> {
                     .show_files_listing()
                     .use_last_modified(true),
             )
-            .service(routes::index)
+            .service(routes::home)
             .service(routes::voice_over)
             .service(routes::contact)
             .service(routes::content_creation)

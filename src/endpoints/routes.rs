@@ -4,11 +4,11 @@ use log::{error, info, warn};
 use mongodb::{bson::doc, Client};
 
 use crate::template::renderers::{
-    Contact, ContentCreation, Illustration, IndexTemplate, NotFoundTemplate, VoiceOver,
+    Contact, ContentCreation, HomePage, Illustration, NotFoundTemplate, VoiceOver,
 };
 
 #[get("/")]
-pub async fn index(mongo_client: web::Data<Client>) -> impl Responder {
+pub async fn home(mongo_client: web::Data<Client>) -> impl Responder {
     let db = mongo_client.database("test");
     let collection = db.collection("test");
 
@@ -22,9 +22,9 @@ pub async fn index(mongo_client: web::Data<Client>) -> impl Responder {
         HttpResponse::InternalServerError()
     });
 
-    let template = IndexTemplate {
-        title: "Home Page Content!",
-        body: "Home Page body Content!",
+    let template = HomePage {
+        title: "Home | Tailored by Taylor",
+        body: "WELCOME!",
     };
 
     let response_body = template.render().unwrap();
